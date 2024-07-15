@@ -1,0 +1,32 @@
+<% include ./partials/header.ejs %>
+<nav></nav>
+
+<ul>
+    <li><a href="#">Home</a></li>
+    <li>Profile</li>
+    <li>Login</li>
+    <li>Sign Up</li>
+    
+    
+    <li class="slide"></li>
+  </ul>
+</nav>
+<section>
+  <div class="title"><span>Moods.</span><span>Mood Board for Fashion</span></div>
+</section>
+<script>(function($){
+  // variables
+  elementWidth = $('ul').width(),
+  containerWidth = $('nav').width(),
+  difference = elementWidth-containerWidth,
+  finalWidth = difference * 1.5,
+  element = $('ul');
+  
+  // active on click
+  $('li').on('click', function(){
+    $('li').removeClass('active');
+    $(this).addClass('active');
+  });
+  
+})(jQuery);</script>
+<% include ./partials/footer.ejs %>

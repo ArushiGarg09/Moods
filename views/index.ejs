@@ -1,0 +1,44 @@
+<%  include ./partials/header.ejs %>
+
+  <nav>
+    <ul>
+      <li><a href="/feed">Feed</a></li>
+      <li><a href="/profile">Profile</a></li>
+      <li>Login</li>
+      <li>Sign Up</li>
+      
+      
+      <li class="slide"></li>
+    </ul>
+  </nav>
+  <section>
+    <div class="title"><span>Moods.</span><span>Mood Board for Fashion</span></div>
+  </section>
+  <script>(function($){
+    // variables
+    elementWidth = $('ul').width(),
+    containerWidth = $('nav').width(),
+    difference = elementWidth-containerWidth,
+    finalWidth = difference * 1.5,
+    element = $('ul');
+    
+    // active on click
+    /*$('li').on('click', function(){
+      $('li').removeClass('active');
+      $(this).addClass('active');
+    });*/
+    
+  })(jQuery);</script>
+  <div class="w-full h-screen bg-[url(https://media.theeverygirl.com/wp-content/uploads/2022/01/paris-outfits-the-everygirl-horizontal.jpg)] bg-blend-darken flex items-center justify-center ">
+   <div class="w-96 h-[50vh] bg-zinc-800 px-4 py-10 rounded-md">
+    <h1 class="text-4xl text-center font-semibold text-white tracking-tighter capitalize leading-none">Welcome to Moods.</h1>
+    <form action="/login" method="post">
+      <input class="border-2 block mt-2 w-full px-3 py-2 rounded-md" type="text" name="username" placeholder="username">
+      <input class="border-2 block mt-2 w-full px-3 py-2 rounded-md" type="password" name="password" placeholder="password">
+      <input class="border-2 block mt-2 w-full px-3 py-2 bg-red-600 text-white rounded-full" type="submit" value="Login">
+      <a class ="mt-2 font-semibold text-white inline-block"href="#">Forgot Password</a>
+    </form>
+    <a class="inline-block mt-7 text-sm font-semibold text-white text-center w-full"href="/register">Don't have an account?</a>
+   </div>
+  </div>
+<%  include ./partials/footer.ejs %>
